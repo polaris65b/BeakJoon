@@ -9,29 +9,17 @@ public class P2839 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int N = Integer.parseInt(br.readLine());
-        int plasticBagThree = 0;
-        int plasticBagFive = 0;
+        int plasticBagFive = N / 5;
+        int remain = N % 5;
 
-        plasticBagFive = N / 5;
-
-        int remain = N - plasticBagFive * 5;
-
-        while (remain < N) {
+        while (plasticBagFive >= 0) {
             if (remain % 3 == 0) {
-                plasticBagThree = remain / 3;
-                break;
+                System.out.println(plasticBagFive + (remain / 3));
+                return;
             }
-            plasticBagFive -= 1;
-            remain = remain + 5;
+            plasticBagFive--;
+            remain += 5;
         }
-
-        if (remain % 3 == 0) {
-            plasticBagThree = remain / 3;
-            System.out.println(plasticBagFive + plasticBagThree);
-        } else if (remain == N) {
-            System.out.println(-1);
-        } else {
-            System.out.println(plasticBagFive + plasticBagThree);
-        }
+        System.out.println(-1);
     }
 }
