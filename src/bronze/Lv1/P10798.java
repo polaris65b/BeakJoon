@@ -1,3 +1,5 @@
+package bronze.Lv1;
+
 import java.io.*;
 
 public class P10798 {
@@ -11,7 +13,6 @@ public class P10798 {
             lines[i] = br.readLine();
         }
 
-        // 가장 긴 문자열의 길이 찾기
         int maxLength = 0;
         for (int i = 0; i < 5; i++) {
             if (lines[i].length() > maxLength) {
@@ -19,7 +20,6 @@ public class P10798 {
             }
         }
         
-        // 세로로 읽기
         StringBuilder result = new StringBuilder();
         for (int col = 0; col < maxLength; col++) {
             for (int row = 0; row < 5; row++) {
